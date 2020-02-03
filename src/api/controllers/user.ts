@@ -67,7 +67,7 @@ const userLogin = (req : any, res : any, next : NextFunction) => {
                 email: user.email,
                 userId: user._id
               },
-              `${process.env.JWT}`,
+              "fJs88TS",
               {
                 expiresIn: "2h"
               }
@@ -90,4 +90,4 @@ const userLogin = (req : any, res : any, next : NextFunction) => {
       });
   };
 
-export default {userAdd, userLogin};
+export default {userAdd,};

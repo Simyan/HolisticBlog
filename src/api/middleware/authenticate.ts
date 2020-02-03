@@ -5,7 +5,7 @@ require('dotenv').config();
 const authenticateUser = (req : any, res: any, next: NextFunction) => {
     try {
         const token = req.headers.authorization.split(" ")[1];
-        const decoded = jwt.verify(token, `${process.env.JWT}`);
+        const decoded = jwt.verify(token, "fJs88TS");
         req.userData = decoded;
         next();
     } catch (error) {

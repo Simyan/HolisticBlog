@@ -28,7 +28,7 @@ app.use((req, res, next) => {
 });
 
 mongoose.connect(
-    `${process.env.DB_CONNECTION}`, { useNewUrlParser: true }).then(
+    "mongodb+srv://holisticuser:gems2009@cluster0-9o1kv.mongodb.net/HolisticBlog?retryWrites=true&w=majority", { useNewUrlParser: true }).then(
         () => { 
           console.log("Connected to mongodb")
             //  app.listen(6101, () => console.log("This is the server")); 
