@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 import bodyparser from 'body-parser';
 require('dotenv').config();
 import userRoutes from './api/routes/user';
-
+import postRoutes from './api/routes/post';
 
 
 const app = express();
@@ -40,6 +40,6 @@ mongoose.connect(
 
 
 app.use("/user", userRoutes);
-
+app.use("/post", postRoutes);
 
 module.exports = app;

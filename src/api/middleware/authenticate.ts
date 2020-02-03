@@ -10,7 +10,7 @@ const authenticateUser = (req : any, res: any, next: NextFunction) => {
         next();
     } catch (error) {
         return res.status(401).json({
-            message: 'Auth failed'
+            message: 'User is not authenticated'
         });
     }
 };
