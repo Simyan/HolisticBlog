@@ -15,36 +15,36 @@ To try out the features implemented, use Postman or a similar tool.
 
     POST REQUEST - https://holisticblog.herokuapp.com/user/signup
 
-In the body section select raw and set type to JSON (will be text by default)  and then paste this into the text area for raw. 
-{
-	"email": "naruto@gmail.com",
-	"password": "test123"
-}
+    In the body section select raw and set type to JSON (will be text by default)  and then paste this into the text area for raw. 
+    {
+	    "email": "naruto@gmail.com",
+	    "password": "test123"
+    }
 
 2. Sign in - This will check if the username exists and then compare the hash of the password. If credentials are valid then it will generate a jwt token (expiry set to 2 hours) and send it back in the response. Use the token for the remaining endpoints as they are protected.
 
     POST REQUEST - https://holisticblog.herokuapp.com/user/signin
 
-In the body section select raw and set type to JSON (will be text by default)  and then paste this into the text area for raw. 
-{
-	"email": "naruto@gmail.com",
-	"password": "test123"
-}
+    In the body section select raw and set type to JSON (will be text by default)  and then paste this into the text area for raw. 
+    {
+	    "email": "naruto@gmail.com",
+	    "password": "test123"
+    }
 
 3. Add post - Will add a post. This is a protected route. 
 
     POST REQUEST - https://holisticblog.herokuapp.com/post/postAdd
 
-In the body section select raw and set type to JSON (will be text by default)  and then paste this into the text area for raw. 
-{
-	"title": "Test Title",
-	"body": "Lorem ipsum Lorem ipsum"
-}
+    In the body section select raw and set type to JSON (will be text by default)  and then paste this into the text area for raw. 
+    {
+	    "title": "Test Title",
+	    "body": "Lorem ipsum Lorem ipsum"
+    }
 
-Also put the token in the Headers - add a key called Authorization and then add this as its value - Bearer TOKEN
+    Also put the token in the Headers - add a key called Authorization and then add this as its value - Bearer TOKEN
 
 4. Get posts - Will get all posts. This is a protected route.
 
     GET REQUEST - https://holisticblog.herokuapp.com/post/postList
 
-Put the token in the Headers - add a key called Authorization and then add this as its value - Bearer TOKEN
+    Put the token in the Headers - add a key called Authorization and then add this as its value - Bearer TOKEN
