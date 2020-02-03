@@ -90,4 +90,4 @@ const userLogin = (req : any, res : any, next : NextFunction) => {
       });
   };
 
-export default {userAdd,};
+export default {userAdd, userLogin};
