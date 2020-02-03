@@ -1,6 +1,8 @@
 import { NextFunction } from "express";
 import User from '../models/user';
 import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
+require('dotenv').config();
 
 const userAdd = (req : any, res : any, next : NextFunction) => {
     //Start 
@@ -21,7 +23,7 @@ const userAdd = (req : any, res : any, next : NextFunction) => {
             const user = new User({
               email: req.body.email,
               password: hash,
-              role: "admin"
+              role: "user"
             });
             user
               .save()
@@ -44,4 +46,48 @@ const userAdd = (req : any, res : any, next : NextFunction) => {
     //End
 };
 
-export default {userAdd};
+
+const userLogin = (req : any, res : any, next : NextFunction) => {
+    User.findOne({ email: req.body.email })
+      .then((user: any) => {
+        if (user.length < 1) {
+          return res.status(401).json({
+            message: "Login failed"
+          });
+        }
+        bcrypt.compare(req.body.password, user.password, (err, result) => {
+          if (err) {
+            return res.status(401).json({
+              message: "Login failed"
+            });
+          }
+          if (result) {
+            const token = jwt.sign(
+              {
+                email: user.email,
+                userId: user._id
+              },
+              `${process.env.JWT}`,
+              {
+                expiresIn: "2h"
+              }
+            );
+            return res.status(200).json({
+              message: "Login succesful",
+              token: token
+            });
+          }
+          res.status(401).json({
+            message: "Login failed"
+          });
+        });
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json({
+          error: err
+        });
+      });
+  };
+
+export default {userAdd, userLogin};

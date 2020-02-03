@@ -5,7 +5,7 @@ const router = express.Router();
 import userController from '../controllers/user';
 
 router.post("/signup", userController.userAdd);
-
+router.post("/signin", userController.userLogin);
 router.post('/xyz', (req, res, next) => {
     res.status(201).json({
         message: 'test'
