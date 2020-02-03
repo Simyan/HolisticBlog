@@ -15,7 +15,7 @@ To try out the features implemented, use Postman or a similar tool.
 
     POST REQUEST - https://holisticblog.herokuapp.com/user/signup
 
-    In the body section select raw and set type to JSON (will be text by default)  and then paste this into the text area for raw. 
+    In the body section select raw and set type to JSON (will be text by default)  and then paste this into the text area of raw. 
     {
 	    "email": "naruto@gmail.com",
 	    "password": "test123"
@@ -25,7 +25,7 @@ To try out the features implemented, use Postman or a similar tool.
 
     POST REQUEST - https://holisticblog.herokuapp.com/user/signin
 
-    In the body section select raw and set type to JSON (will be text by default)  and then paste this into the text area for raw. 
+    In the body section select raw and set type to JSON (will be text by default)  and then paste this into the text area of raw. 
     {
 	    "email": "naruto@gmail.com",
 	    "password": "test123"
@@ -35,7 +35,7 @@ To try out the features implemented, use Postman or a similar tool.
 
     POST REQUEST - https://holisticblog.herokuapp.com/post/postAdd
 
-    In the body section select raw and set type to JSON (will be text by default)  and then paste this into the text area for raw. 
+    In the body section select raw and set type to JSON (will be text by default)  and then paste this into the text area of raw. 
     {
 	    "title": "Test Title",
 	    "body": "Lorem ipsum Lorem ipsum"
