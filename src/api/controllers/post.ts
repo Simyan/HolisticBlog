@@ -26,7 +26,19 @@ const postAdd = (req : any, res : any, next : NextFunction) => {
     //End
 };
 
+const postList = (req : any, res : any, next : NextFunction) => {
+    Post.find()
+    .then(data => {
+      res.status(200).json({data});
+    })
+    .catch(err => {
+      res.status(500).json({
+        error: err + "(While fetching all posts)"
+      });
+    });
+};
 
 
 
-export default {postAdd};
+
+export default {postAdd, postList};

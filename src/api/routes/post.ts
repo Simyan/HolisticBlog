@@ -6,5 +6,5 @@ import postController from '../controllers/post';
 import authenticate from '../middleware/authenticate';
 
 router.post("/postAdd", authenticate.authenticateUser, postController.postAdd);
-
+router.get("/postList", authenticate.authenticateUser, postController.postList);
 export default router;
